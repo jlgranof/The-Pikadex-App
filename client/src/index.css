@@ -1,0 +1,130 @@
+/* TODO Add site wide styles */
+
+/* body {
+  background: url(https://s3.amazonaws.com/noupe/2009/10/ava7.jpg);
+  position: absolute;
+  z-index: -2;
+} */
+
+
+  .all-pokedexes {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .all-pokedexes div {
+    margin: 0 100px;
+    padding: 10px;
+    border: 2px solid black;
+    height: 400px;
+    width: 200px;
+  }
+
+
+
+  .header {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .logo {
+    margin: auto;
+  }
+
+
+  .stat-bar {
+    height: 20px;
+    width: 15px;
+    background-color: blue;
+    margin-left: 5px;
+  }
+
+
+  .stats-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .stats-container div {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+
+  .all-3-pokedexes {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .red-container div {
+    display: block;
+    position: relative;
+  }
+
+  .red-container div::after {
+    content: "";
+    background: url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png);
+    background-repeat: no-repeat;
+    opacity: .5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+  }
+
+  .blue-container div {
+    display: block;
+    position: relative;
+  }
+
+  .blue-container div::after {
+    content: "";
+    background: url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png);
+    background-repeat: no-repeat;
+    opacity: .5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+  }
+
+  .yellow-container div {
+    display: block;
+    position: relative;
+  }
+
+  .yellow-container div::after {
+    content: "";
+    background: url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png);
+    background-repeat: no-repeat;
+    opacity: .5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+  }
+
+  .pokedex-list {
+    height: 700px;
+    width: 450px;
+    border: 1px solid black;
+    margin: 100px;
+    border-radius: 6px;
+    box-shadow: 5px 10px grey;
+  }
+
+  .pokedex-color {
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  .pokedex-listing {
+    text-align: center;
+    color: black;
+  }
