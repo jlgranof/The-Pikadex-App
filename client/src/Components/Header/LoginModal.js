@@ -34,7 +34,7 @@ const LoginModal = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         dispatch(login(email, password))
-        console.log(user)
+        dispatch(fetchUserPokedex(user.id))
         setOpen(false)
     }
 

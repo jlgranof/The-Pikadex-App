@@ -4,9 +4,8 @@ import { useParams } from 'react-router-dom'
 import StatsContainer from './StatsContainer'
 
 // Material UI imports
-import { CardActionArea, CardMedia, makeStyles, Typography } from '@material-ui/core'
-import Card from '@material-ui/core/Card'
-import { grey } from '@material-ui/core/colors'
+import { makeStyles } from '@material-ui/core'
+
 
 const useStyles = makeStyles({
     root: {

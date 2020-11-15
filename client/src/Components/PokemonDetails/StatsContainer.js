@@ -1,8 +1,4 @@
 import React from 'react';
-import StatBar from './StatBar';
-
-// total number for stats is 800 **** top pokemon under #722 has stats of 720
-// individual stats go to 255
 
 const StatsContainer = (props) => {
     const numberBars = (stats) => {

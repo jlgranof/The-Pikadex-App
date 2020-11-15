@@ -9,6 +9,7 @@ export const authSlice = (state = {}, action) => {
         case REMOVE_USER:
             return {};
         default:
-            return null;
+            return state;
     }
 }
+

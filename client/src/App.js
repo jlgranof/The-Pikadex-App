@@ -32,7 +32,6 @@ const App = (props) => {
                     'access': Cookies.get('access_token_cookie')
                 }
             })
-            console.log('hi')
             if (response.ok) {
                 const data = await response.json()
                 dispatch(setUser(data))
@@ -57,14 +56,14 @@ const App = (props) => {
         preloadPokedex()
     }, [loading])
 
-    useEffect (() => {
-        const getUserPokedex = async () => {
-            if (user) {
-                dispatch(fetchUserPokedex(user.id))
-            }
-        }
-        getUserPokedex()
-    })
+    // useEffect (() => {
+    //     const getUserPokedex = async () => {
+    //         if (user) {
+    //             dispatch(fetchUserPokedex(user.id))
+    //         }
+    //     }
+    //     getUserPokedex()
+    // })
 
 
     if (loading) return null

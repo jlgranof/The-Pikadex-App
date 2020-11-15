@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import UserPokedexDisplay from './UserPokedexDisplay'
+import AddPokemon from './AddPokemon'
 
 const UserPokedex = () => {
     const allPokedexes = useSelector(state => state.pokedexSlice.allPokedex)
@@ -19,7 +20,7 @@ const UserPokedex = () => {
     return (
         <div>
             <h1></h1>
-            <button>Add Pokemon</button>
+            <AddPokemon />
             <table>
                 <tr>
                     <th>Name</th>

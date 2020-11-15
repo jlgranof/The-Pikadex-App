@@ -1,21 +1,26 @@
 import React from 'react'
 import PokedexListContainer from './PokedexListContainer'
 import { useSelector } from 'react-redux'
+import CreateNewPokedex from './CreateNewPokedex'
 
 const Pokedexes = () => {
     const redPokedexes = useSelector(state => state.pokedexSlice.redPokedex)
     const bluePokedexes = useSelector(state => state.pokedexSlice.bluePokedex)
     const yellowPokedexes = useSelector(state => state.pokedexSlice.yellowPokedex)
+    const user = useSelector(state => state.authSlice)
 
     if (!redPokedexes || !bluePokedexes || !yellowPokedexes) {
         return <h1>Loading</h1>
     }
 
-
+    let createButton
+    if (user.id) {
+        createButton = <CreateNewPokedex />
+    }
 
     return (
         <div>
-            <button>Create New Pokedex</button>
+            {createButton}
             <div className='all-3-pokedexes'>
                 <div className='red-container'>
                     <PokedexListContainer name="Red" pokedexes={redPokedexes}/>
