@@ -2,6 +2,7 @@ import React from 'react'
 import PokedexListContainer from './PokedexListContainer'
 import { useSelector } from 'react-redux'
 import CreateNewPokedex from './CreateNewPokedex'
+import styles from './Pokedexes.module.scss'
 
 const Pokedexes = () => {
     const redPokedexes = useSelector(state => state.pokedexSlice.redPokedex)
@@ -22,14 +23,14 @@ const Pokedexes = () => {
     return (
         <div>
             {createButton}
-            <div className='all-3-pokedexes'>
-                <div className='red-container'>
+            <div className={styles.all}>
+                <div className={styles.red}>
                     <PokedexListContainer name="Red" pokedexes={redPokedexes}/>
                 </div>
-                <div className='blue-container'>
+                <div className={styles.blue}>
                     <PokedexListContainer name="Blue" pokedexes={bluePokedexes}/>
                 </div>
-                <div className='yellow-container'>
+                <div className={styles.yellow}>
                     <PokedexListContainer name="Yellow" pokedexes={yellowPokedexes}/>
                 </div>
             </div>

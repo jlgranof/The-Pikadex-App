@@ -1,0 +1,58 @@
+.all {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .red div {
+    display: block;
+    position: relative;
+  }
+
+  .red div::after {
+    content: "";
+    background: url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png);
+    background-repeat: no-repeat;
+    opacity: .5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+  }
+
+  .blue div {
+    display: block;
+    position: relative;
+  }
+
+  .blue div::after {
+    content: "";
+    background: url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png);
+    background-repeat: no-repeat;
+    opacity: .5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+  }
+
+  .yellow div {
+    display: block;
+    position: relative;
+  }
+
+  .yellow div::after {
+    content: "";
+    background: url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png);
+    background-repeat: no-repeat;
+    opacity: .5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+  }
