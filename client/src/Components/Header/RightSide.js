@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import LoginModal from './LoginModal'
 import SignupModal from './SignupModal'
 import { fetchUserPokedex } from '../../Redux/Actions/userPokedex'
+import { logout } from '../../Redux/Actions/auth'
 import PokedexDropdown from './PokedexDropdown'
 
 
@@ -12,6 +13,11 @@ const RightSide = () => {
     const user = useSelector(state => state.authSlice)
     const pokedexes = useSelector(state => state.userPokedexState)
     const dispatch = useDispatch()
+
+    // const logout = (e) => {
+    //     // e.preventDefault()
+    //     dispatch(logout())
+    // }
 
     // useEffect (() => {
     //     const getUserPokedex = async () => {
@@ -33,7 +39,7 @@ const RightSide = () => {
 
     return (
         <div>
-            <button>Logout</button>
+            <button type='button' onClick={logout}>Logout</button>
             <PokedexDropdown />
         </div>
     )

@@ -1,4 +1,4 @@
-import { GET_USER_POKEDEX, ADD_USER_POKEDEX, ADD_POKEMON } from '../Actions/userPokedex'
+import { GET_USER_POKEDEX, ADD_USER_POKEDEX, ADD_POKEMON, EDIT_POKEMON } from '../Actions/userPokedex'
 
 export const userPokedexSlice = (state = {}, action) => {
     Object.freeze(state)
@@ -11,6 +11,8 @@ export const userPokedexSlice = (state = {}, action) => {
         case ADD_USER_POKEDEX:
             return nextState
         case ADD_POKEMON:
+            return nextState
+        case EDIT_POKEMON:
             return nextState
         default:
             return state;

@@ -1,6 +1,7 @@
 export const GET_USER_POKEDEX = "GET USER POKEDEX"
 export const ADD_USER_POKEDEX = "ADD USER POKEDEX"
 export const ADD_POKEMON = "ADD POKEMON"
+export const EDIT_POKEMON = "EDIT POKEMON"
 
 export const getUserPokedex = (userPokedex) => {
     return {
@@ -19,6 +20,13 @@ export const addUserPokedex = (userPokedex) => {
 export const addPokemon = (pokemon) => {
     return {
         type: ADD_POKEMON,
+        pokemon
+    }
+}
+
+export const editPokemon = (pokemon) => {
+    return {
+        type: EDIT_POKEMON,
         pokemon
     }
 }
@@ -63,6 +71,21 @@ export const addNewPokemon = (pokedex_id, pokemon_id, level, hp, attack, defense
         if (response.ok) {
             const pokemon = await response.json()
             dispatch(addPokemon(pokemon.pokemon))
+        }
+    }
+}
+
+export const updatePokemon = (id, level, hp, attack, defense, special_attack, special_defense, speed, active_party, still_own) => {
+    return async dispatch => {
+        console.log('here')
+        const response = await fetch(`/api/pokedex/pokemon/${id}`, {
+            method: 'put',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({level, hp, attack, defense, special_attack, special_defense, speed, active_party, still_own})
+        })
+        if (response.ok) {
+            const pokemon = await response.json()
+            dispatch(editPokemon(pokemon.pokemon))
         }
     }
 }

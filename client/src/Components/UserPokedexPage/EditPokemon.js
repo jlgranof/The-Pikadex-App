@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { NavLink, useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchUserPokedex, addNewPokemon } from '../../Redux/Actions/userPokedex'
+import { fetchUserPokedex, updatePokemon } from '../../Redux/Actions/userPokedex'
 import { fetchAllPokedex, fetchBluePokedex, fetchRedPokedex, fetchYellowPokedex } from '../../Redux/Actions/pokedex'
 
 // Material UI Imports
@@ -28,11 +28,10 @@ const useStyles = makeStyles((theme) => ({
       },
   }));
 
-const AddPokemon = (props) => {
+const EditPokemon = (props) => {
     const classes = useStyles();
     const dispatch = useDispatch()
     const [open, setOpen] = React.useState(false);
-    const [pokemon_id, setPokemonID] = useState('')
     const [level, setLevel] = useState('')
     const [hp, setHP] = useState('')
     const [attack, setAttack] = useState('')
@@ -49,7 +48,7 @@ const AddPokemon = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        dispatch(addNewPokemon(id, pokemon_id, level, hp, attack, defense, special_attack, special_defense, speed, false, true))
+        dispatch(updatePokemon(props.id, level, hp, attack, defense, special_attack, special_defense, speed, false, true))
         dispatch(fetchUserPokedex())
         dispatch(fetchRedPokedex())
         dispatch(fetchBluePokedex())
@@ -66,7 +65,6 @@ const AddPokemon = (props) => {
         setOpen(false);
     }
 
-    const updatePokemonID = (e) => setPokemonID(e.target.value);
     const updateLevel = (e) => setLevel(e.target.value)
     const updateHP = (e) => setHP(e.target.value)
     const updateAttack = (e) => setAttack(e.target.value)
@@ -77,15 +75,10 @@ const AddPokemon = (props) => {
     const updateActiveParty = (e) => setActiveParty(e.target.value)
     const updateStillOwn = (e) => setStillOwn(e.target.value)
 
-    let pokemonMenu
-    if (pokemons) {
-        pokemonMenu = pokemons.map((pokemon) => <MenuItem value={pokemon.id}>{pokemon.name}</MenuItem>)
-    }
-
     return (
         <div>
             <div>
-                <button type="button" onClick={handleOpen}>Add New Pokemon</button>
+                <button type="button" onClick={handleOpen}>Edit Pokemon</button>
                 <Modal
                     aria-labelledby="transition-modal-title"
                     aria-describedby="transition-modal-description"
@@ -100,21 +93,9 @@ const AddPokemon = (props) => {
                 >
                     <Fade in={open}>
                     <div className={classes.paper}>
-                        <h2 id="transition-modal-title">New Pokemon</h2>
+                        <h2 id="transition-modal-title">Edit Pokemon</h2>
                         <div id="transition-modal-description">
                             <form onSubmit={handleSubmit}>
-                                <FormControl className={classes.formControl}>
-                                    <InputLabel id="demo-simple-select-label">Pokemon</InputLabel>
-                                    <Select
-                                    labelId="demo-simple-select-label"
-                                    id="demo-simple-select"
-                                    value={pokemon_id}
-                                    onChange={updatePokemonID}
-                                    >
-                                    {pokemonMenu}
-                                    </Select>
-                                </FormControl>
-                                <br></br>
                                 <TextField id="standard-basic" label="Level" value={level} onChange={updateLevel} />
                                 <br></br>
                                 <TextField id="standard-basic" label="HP" value={hp} onChange={updateHP} />
@@ -133,7 +114,7 @@ const AddPokemon = (props) => {
                                 <br></br>
                                 <TextField id="standard-basic" label="Still Own" value={still_own} onChange={updateStillOwn} />
                                 <br></br>
-                                <Button variant="contained" type="submit">Add</Button>
+                                <Button variant="contained" type="submit">Edit</Button>
                             </form>
                         </div>
                     </div>
@@ -144,4 +125,4 @@ const AddPokemon = (props) => {
     )
 }
 
-export default AddPokemon
+export default EditPokemon

@@ -71,3 +71,18 @@ def add_pokemon(pokedex_id):
     db.session.add(pokemon)
     db.session.commit()
     return pokemon.to_dict()
+
+@pokedex_routes.route('/pokemon/<pokemon_id>', methods=['PUT'])
+def edit_pokemon(pokemon_id):
+    pokemon = User_Pokemon.query.get(pokemon_id)
+    pokemon.level = request.json.get('level')
+    pokemon.hp = request.json.get('hp')
+    pokemon.attack = request.json.get('attack', None)
+    pokemon.defense = request.json.get('defense', None)
+    pokemon.special_attack = request.json.get('special_attack', None)
+    pokemon.special_defense = request.json.get('special_defense', None)
+    pokemon.speed = request.json.get('speed', None)
+    pokemon.active_party = request.json.get('active_party', None)
+    pokemon.still_own = request.json.get('still_own', None)
+    db.session.commit()
+    return pokemon.to_dict()

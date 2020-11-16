@@ -1,4 +1,5 @@
 import React from 'react'
+import EditPokemon from './EditPokemon'
 
 const UserPokedexDisplay = (props) => {
     return (
@@ -11,7 +12,7 @@ const UserPokedexDisplay = (props) => {
             <td>{props.pokemon.special_attack}</td>
             <td>{props.pokemon.special_defense}</td>
             <td>{props.pokemon.speed}</td>
-            <td><button>Edit</button></td>
+            <td><EditPokemon id={props.pokemon.id}/></td>
         </tr>
     )
 }
