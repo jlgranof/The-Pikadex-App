@@ -1,8 +1,5 @@
 import React, { useState } from 'react'
-import { NavLink } from 'react-router-dom'
-import Cookies from 'universal-cookie'
 import { useDispatch, useSelector } from 'react-redux'
-import { login } from '../../Redux/Actions/auth'
 import { fetchUserPokedex, createUserPokedex } from '../../Redux/Actions/userPokedex'
 import { fetchAllPokedex, fetchBluePokedex, fetchRedPokedex, fetchYellowPokedex } from '../../Redux/Actions/pokedex'
 

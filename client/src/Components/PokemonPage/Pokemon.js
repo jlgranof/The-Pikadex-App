@@ -1,6 +1,11 @@
-import React, { useState, useEffect } from 'react'
-import PokemonListing from './PokemonListing'
+// react imports
+import React from 'react'
+
+// redux imports
 import { useSelector } from 'react-redux'
+
+// component imports
+import PokemonListing from './PokemonListing'
 
 // Marterial UI imports
 import { Grid } from '@material-ui/core'

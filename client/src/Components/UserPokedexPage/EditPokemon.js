@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
-import { NavLink, useParams } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { fetchUserPokedex, updatePokemon } from '../../Redux/Actions/userPokedex'
 import { fetchAllPokedex, fetchBluePokedex, fetchRedPokedex, fetchYellowPokedex } from '../../Redux/Actions/pokedex'
 
 // Material UI Imports
-import { Modal, Backdrop, Fade, makeStyles, TextField, Button, FormControl, InputLabel, Select, MenuItem } from '@material-ui/core'
+import { Modal, Backdrop, Fade, makeStyles, TextField, Button } from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
     modal: {
@@ -41,10 +40,7 @@ const EditPokemon = (props) => {
     const [speed, setSpeed] = useState('')
     const [active_party, setActiveParty] = useState('')
     const [still_own, setStillOwn] = useState('')
-    const { id } = useParams()
 
-    const user = useSelector(state => state.authSlice)
-    const pokemons = useSelector(state => state.pokemonSlice).pokemon
 
     const handleSubmit = (e) => {
         e.preventDefault()

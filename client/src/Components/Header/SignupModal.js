@@ -1,6 +1,4 @@
 import React, { useState } from 'react'
-import { NavLink } from 'react-router-dom'
-import Cookies from 'universal-cookie'
 import { useDispatch } from 'react-redux'
 import { signup } from '../../Redux/Actions/auth'
 

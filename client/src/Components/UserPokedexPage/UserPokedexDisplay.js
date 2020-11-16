@@ -1,9 +1,15 @@
+// react imports
 import React from 'react'
+
+// component imports
 import EditPokemon from './EditPokemon'
+
+// styles imports
+import styles from './UserPokedexDisplay.module.scss'
 
 const UserPokedexDisplay = (props) => {
     return (
-        <tr>
+        <tr className={styles.tr}>
             <td>{props.pokemon.pokemon.name}</td>
             <td>{props.pokemon.level}</td>
             <td>{props.pokemon.hp}</td>

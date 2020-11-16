@@ -3,7 +3,7 @@ import styles from './PokedexDisplay.module.scss'
 
 const PokedexDisplay = (props) => {
     return (
-        <tr>
+        <tr className={styles.tr}>
             <td>{props.pokemon.pokemon.name}</td>
             <td>{props.pokemon.level}</td>
             <td>{props.pokemon.hp}</td>

@@ -1,4 +1,7 @@
+// react imports
 import React from 'react';
+
+// style imports
 import styles from './StatsContainer.module.scss'
 
 const StatsContainer = (props) => {

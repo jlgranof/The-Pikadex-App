@@ -1,6 +1,11 @@
+// react imports
 import React, { useState } from 'react'
-import { NavLink, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
+
+// redux imports
 import { useDispatch, useSelector } from 'react-redux'
+
+// action imports
 import { fetchUserPokedex, addNewPokemon } from '../../Redux/Actions/userPokedex'
 import { fetchAllPokedex, fetchBluePokedex, fetchRedPokedex, fetchYellowPokedex } from '../../Redux/Actions/pokedex'
 
@@ -44,7 +49,6 @@ const AddPokemon = (props) => {
     const [still_own, setStillOwn] = useState('')
     const { id } = useParams()
 
-    const user = useSelector(state => state.authSlice)
     const pokemons = useSelector(state => state.pokemonSlice).pokemon
 
     const handleSubmit = (e) => {

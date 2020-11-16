@@ -1,6 +1,9 @@
+// react imports
 import React from 'react';
-import styles from './PokemonListing.module.scss'
 import { NavLink } from 'react-router-dom';
+
+// style imports
+import styles from './PokemonListing.module.scss'
 
   const PokemonListing = (props) => {
     return (

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter, Switch, Route, NavLink } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Cookies from 'js-cookie'
 
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { setUser } from './Redux/Actions/auth'
 import { fetchPokemon } from './Redux/Actions/pokemon'
 import { fetchUserPokedex } from './Redux/Actions/userPokedex'
@@ -21,7 +21,6 @@ import PageNotFound from './Components/404/PageNotFound';
 const App = (props) => {
     const dispatch = useDispatch()
     const [loading, setLoading] = useState(true)
-    const user = useSelector(state => state.authSlice)
 
     useEffect (() => {
         const getUser = async () => {
@@ -54,16 +53,7 @@ const App = (props) => {
         getUser()
         preloadPokemon()
         preloadPokedex()
-    }, [loading])
-
-    // useEffect (() => {
-    //     const getUserPokedex = async () => {
-    //         if (user) {
-    //             dispatch(fetchUserPokedex(user.id))
-    //         }
-    //     }
-    //     getUserPokedex()
-    // })
+    })
 
 
     if (loading) return null

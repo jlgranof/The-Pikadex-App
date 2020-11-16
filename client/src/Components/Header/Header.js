@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react'
+// react imports
+import React from 'react'
 import { NavLink } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
-import { logout } from '../../Redux/Actions/auth'
+
+// component imports
 import RightSide from './RightSide'
 
 const Header = () => {

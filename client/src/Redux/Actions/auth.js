@@ -1,5 +1,3 @@
-import Cookies from 'universal-cookie'
-
 export const SET_USER = "SET_USER"
 export const REMOVE_USER = "REMOVE_USER"
 export const CREATE_USER = "CREATE_USER"

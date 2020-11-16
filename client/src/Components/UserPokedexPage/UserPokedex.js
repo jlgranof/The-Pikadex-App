@@ -1,8 +1,15 @@
+// react imports
 import React from 'react'
-import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
+
+// redux imports
+import { useSelector } from 'react-redux'
+
+// component imports
 import UserPokedexDisplay from './UserPokedexDisplay'
 import AddPokemon from './AddPokemon'
+
+// styles imports
 import styles from './UserPokedex.module.scss'
 
 const UserPokedex = () => {
