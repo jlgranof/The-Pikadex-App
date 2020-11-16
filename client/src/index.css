@@ -149,6 +149,7 @@
   .pokedex-color {
     text-align: center;
     line-height: 1.6;
+    text-shadow: 5px 5px #bfbfbf;
   }
 
   .pokedex-listing {

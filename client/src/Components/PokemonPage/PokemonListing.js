@@ -17,6 +17,11 @@ const useStyles = makeStyles({
     },
     info: {
       textAlign: 'center'
+    },
+    name: {
+      textShadow: '5px 5px #bfbfbf',
+      color: 'black',
+      textDecoration: 'none'
     }
   });
 
@@ -26,20 +31,20 @@ const useStyles = makeStyles({
 
 
     return (
-        <Card className={classes.root} >
-            <CardActionArea >
+      <Card className={classes.root} >
+          <CardActionArea >
               <NavLink to={`/pokemon/${props.pokemon.id}`} >
                   <CardMedia
                       className={classes.media}
-                      image={props.pokemon.official_artwork}
+                       image={props.pokemon.official_artwork}
                   />
               </NavLink>
-                <div className={classes.info}>
-                  <Typography variant="h6">{props.pokemon.id}</Typography>
-                  <Typography variant="h4">{props.pokemon.name}</Typography>
-                </div>
-            </CardActionArea>
-        </Card>
+                  <div className={classes.info}>
+                    <h2 className={classes.name}>#{props.pokemon.id}</h2>
+                    <h1 className={classes.name}>{props.pokemon.name}</h1>
+                  </div>
+              </CardActionArea>
+      </Card>
     )
 }
 

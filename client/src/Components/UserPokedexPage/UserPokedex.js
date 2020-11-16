@@ -24,6 +24,7 @@ const UserPokedex = () => {
         <div>
             <div className={styles.pleasework}>
                 <h1>{pokedex.name} Pokedex</h1>
+                <h2>Pokemon {pokedex.game.name}</h2>
                 <AddPokemon />
             </div>
             <table>

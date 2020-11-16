@@ -22,12 +22,12 @@ const useStyles = makeStyles({
         textAlign: 'center',
         marginTop: 30,
         color: 'black',
-        textShadow: '2px 2px #bfbfbf'
+        textShadow: '5px 5px #bfbfbf'
     },
     id: {
         textAlign: 'center',
         marginTop: 5,
-        color: 'grey',
+        textShadow: '5px 5px #bfbfbf',
     },
     media: {
         height: 300,
@@ -44,7 +44,7 @@ const useStyles = makeStyles({
         height: 100,
         width: 200,
         display: 'block',
-        marginLeft: 100
+        marginLeft: 105
     },
     basic_info: {
         height: 200,
@@ -92,11 +92,11 @@ const PokemonDetails = (props) => {
                         src={pokemon.official_artwork}
                         alt={pokemon.name}
                     />
-                    <h2 className={classes.title}>{pokemon.name}</h2>
-                    <h3 className={classes.id}>#{pokemon.id}</h3>
-                    <h3 className={classes.title}>{pokemon.type_1} {pokemon.type_2}</h3>
-                    <h4 className={classes.id}>Weight: {pokemon.weight}</h4>
-                    <h4 className={classes.id}>Height: {pokemon.height}</h4>
+                    <h1 className={classes.title}>{pokemon.name}</h1>
+                    <h2 className={classes.id}>#{pokemon.id}</h2>
+                    <h1 className={classes.title}>{pokemon.type_1} {pokemon.type_2}</h1>
+                    <h2 className={classes.id}>Weight: {pokemon.weight}</h2>
+                    <h2 className={classes.id}>Height: {pokemon.height}</h2>
                     <div className={classes.stats}>
                         <StatsContainer stats={stats}/>
                     </div>

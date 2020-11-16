@@ -19,6 +19,7 @@ const Pokedex = () => {
     return (
         <div>
             <h1 className={styles.header}>{pokedex.name} Pokedex</h1>
+            <h2 className={styles.header}>Pokemon {pokedex.game.name}</h2>
             <table>
                 <tr>
                     <th>Level</th>
