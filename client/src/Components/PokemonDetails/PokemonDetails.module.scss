@@ -1,0 +1,41 @@
+.title {
+    text-align: center;
+    margin-top: 30px;
+    color: black;
+    text-shadow: 5px 5px #bfbfbf
+}
+
+.id {
+    text-align: center;
+    margin-top: 5px;
+    text-shadow: 5px 5px #bfbfbf;
+}
+
+.media {
+    height: 300px;
+    width: 300px;
+    display: block;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+    box-shadow: 0 10px 10px 10px #bfbfbf;
+    border-radius: 25%;
+}
+
+.stats {
+    height: 100px;
+    width: 200px;
+    display: block;
+    margin-left: 105px;
+}
+
+.basic_info {
+    height: 200px;
+    width: 200px;
+    border: 1px solid black;
+    box-shadow: 2px 4px black;
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+}

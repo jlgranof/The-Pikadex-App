@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import StatsContainer from './StatsContainer'
+import styles from './PokemonDetails.module.scss'
 
 // Material UI imports
 import { makeStyles } from '@material-ui/core'
@@ -9,51 +10,15 @@ import { makeStyles } from '@material-ui/core'
 
 const useStyles = makeStyles({
     root: {
-        marginTop: 50,
+        marginTop: 40,
         maxWidth: 550,
+        paddingTop: 25,
         display: 'block',
         margin: 'auto',
         height: 750,
         border: '1px solid black',
         boxShadow: '0 10px 10px 10px #bfbfbf',
         borderRadius: '10%'
-    },
-    title:{
-        textAlign: 'center',
-        marginTop: 30,
-        color: 'black',
-        textShadow: '5px 5px #bfbfbf'
-    },
-    id: {
-        textAlign: 'center',
-        marginTop: 5,
-        textShadow: '5px 5px #bfbfbf',
-    },
-    media: {
-        height: 300,
-        width: 300,
-        display: 'block',
-        marginTop: 10,
-        marginLeft: 'auto',
-        marginRight: 'auto',
-        border: '1px solid black',
-        boxShadow: '0 10px 10px 10px #bfbfbf',
-        borderRadius: '25%'
-    },
-    stats: {
-        height: 100,
-        width: 200,
-        display: 'block',
-        marginLeft: 105
-    },
-    basic_info: {
-        height: 200,
-        width: 200,
-        border: '1px solid black',
-        boxShadow: '2px 4px black',
-        display: 'block',
-        margin: 'auto',
-        marginTop: 10
     }
 })
 
@@ -88,16 +53,16 @@ const PokemonDetails = (props) => {
         <div>
             <div className={classes.root}>
                     <img
-                        className={classes.media}
+                        className={styles.media}
                         src={pokemon.official_artwork}
                         alt={pokemon.name}
                     />
-                    <h1 className={classes.title}>{pokemon.name}</h1>
-                    <h2 className={classes.id}>#{pokemon.id}</h2>
-                    <h1 className={classes.title}>{pokemon.type_1} {pokemon.type_2}</h1>
-                    <h2 className={classes.id}>Weight: {pokemon.weight}</h2>
-                    <h2 className={classes.id}>Height: {pokemon.height}</h2>
-                    <div className={classes.stats}>
+                    <h1 className={styles.title}>{pokemon.name}</h1>
+                    <h2 className={styles.id}>#{pokemon.id}</h2>
+                    <h1 className={styles.title}>{pokemon.type_1} {pokemon.type_2}</h1>
+                    <h2 className={styles.id}>Weight: {pokemon.weight}</h2>
+                    <h2 className={styles.id}>Height: {pokemon.height}</h2>
+                    <div className={styles.stats}>
                         <StatsContainer stats={stats}/>
                     </div>
             </div>
