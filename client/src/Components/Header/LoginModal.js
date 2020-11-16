@@ -34,8 +34,8 @@ const LoginModal = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         dispatch(login(email, password))
-        dispatch(fetchUserPokedex(user.id))
         setOpen(false)
+        dispatch(fetchUserPokedex(user.id))
     }
 
     const handleOpen = () => {
@@ -48,8 +48,8 @@ const LoginModal = (props) => {
 
     const demoLogin = (e) => {
         e.preventDefault()
-        dispatch(login('demo@user.com', 'password'))
-        dispatch(fetchUserPokedex(1))
+        dispatch(login('jeff@jeff.com', 'password'))
+        dispatch(fetchUserPokedex(2))
         setOpen(false)
     }
 
@@ -59,7 +59,7 @@ const LoginModal = (props) => {
     return (
         <div>
             <div>
-                <button type="button" onClick={handleOpen}>Login</button>
+                <button className='button' type="button" onClick={handleOpen}>Login</button>
                 <Modal
                     aria-labelledby="transition-modal-title"
                     aria-describedby="transition-modal-description"

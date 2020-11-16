@@ -9,18 +9,20 @@ import { makeStyles } from '@material-ui/core'
 
 const useStyles = makeStyles({
     root: {
-        maxWidth: 500,
+        marginTop: 50,
+        maxWidth: 550,
         display: 'block',
         margin: 'auto',
-        height: 1000,
-        border: '1px solid grey',
-        boxShadow: '5px 10px grey'
+        height: 750,
+        border: '1px solid black',
+        boxShadow: '0 10px 10px 10px #bfbfbf',
+        borderRadius: '10%'
     },
     title:{
         textAlign: 'center',
         marginTop: 30,
         color: 'black',
-        textShadow: '2px 2px grey'
+        textShadow: '2px 2px #bfbfbf'
     },
     id: {
         textAlign: 'center',
@@ -34,16 +36,15 @@ const useStyles = makeStyles({
         marginTop: 10,
         marginLeft: 'auto',
         marginRight: 'auto',
-        border: '1px solid grey',
-        boxShadow: '5px 10px black',
+        border: '1px solid black',
+        boxShadow: '0 10px 10px 10px #bfbfbf',
+        borderRadius: '25%'
     },
     stats: {
-        height: 300,
+        height: 100,
         width: 200,
-        border: '1px solid black',
-        boxShadow: '2px 4px black',
         display: 'block',
-        margin: 'auto',
+        marginLeft: 100
     },
     basic_info: {
         height: 200,
@@ -85,7 +86,6 @@ const PokemonDetails = (props) => {
 
     return (
         <div>
-            <h1>Pokemon Details</h1>
             <div className={classes.root}>
                     <img
                         className={classes.media}
@@ -94,11 +94,11 @@ const PokemonDetails = (props) => {
                     />
                     <h2 className={classes.title}>{pokemon.name}</h2>
                     <h3 className={classes.id}>#{pokemon.id}</h3>
+                    <h3 className={classes.title}>{pokemon.type_1} {pokemon.type_2}</h3>
+                    <h4 className={classes.id}>Weight: {pokemon.weight}</h4>
+                    <h4 className={classes.id}>Height: {pokemon.height}</h4>
                     <div className={classes.stats}>
                         <StatsContainer stats={stats}/>
-                    </div>
-                    <div className={classes.basic_info}>
-                        {/*basic info container*/}
                     </div>
             </div>
         </div>

@@ -30,7 +30,7 @@ const RightSide = () => {
 
     if (!user.id) {
         return (
-            <div>
+            <div className='right-side'>
                 <LoginModal />
                 <SignupModal />
             </div>
@@ -38,7 +38,7 @@ const RightSide = () => {
     }
 
     return (
-        <div>
+        <div className='right-side'>
             <button type='button' onClick={logout}>Logout</button>
             <PokedexDropdown />
         </div>

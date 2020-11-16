@@ -1,0 +1,28 @@
+.hp {
+    display: flex;
+    flex-direction: column-reverse;
+    height: 100px;
+    width: 15px;
+}
+
+.bar {
+    height: 25px;
+    width: 30px;
+    background-color: blue;
+}
+
+.statholder {
+    margin-left: 15px;
+    margin-right: 15px;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.caption {
+    margin-top: 5px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+}

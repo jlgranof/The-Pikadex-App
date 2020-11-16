@@ -17,8 +17,7 @@ const Pokemon = () => {
      }
 
     return (
-        <div>
-            <h2>Pokemon List</h2>
+        <div className='pokemongrid'>
             <Grid
                 container
                 direction="row"

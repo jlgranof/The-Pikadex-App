@@ -11,13 +11,14 @@ const Pokedex = () => {
     if (!allPokedexes) {
         return <h1>Loading</h1>
     }
-
-    let pokemons = allPokedexes[id - 1].pokemon
+    let pokedex = allPokedexes[id - 1]
+    let pokemons = pokedex.pokemon
     const pokedexComponents = pokemons.map((pokemon) => <PokedexDisplay key={pokemon.id} pokemon={pokemon}/>)
 
 
     return (
         <div>
+            <h1 className={styles.header}>{pokedex.name} Pokedex</h1>
             <table>
                 <tr>
                     <th>Level</th>

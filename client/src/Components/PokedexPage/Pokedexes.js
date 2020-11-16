@@ -10,8 +10,9 @@ const Pokedexes = () => {
     const user = useSelector(state => state.authSlice)
 
     if (!redPokedexes || !bluePokedexes || !yellowPokedexes) {
-        return <h1>Loading</h1>
+        return <h1>loading...</h1>
     }
+
 
     let createButton
     if (user.id) {

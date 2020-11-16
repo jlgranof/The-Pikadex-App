@@ -54,7 +54,7 @@ const SignupModal = (props) => {
     return (
         <div>
             <div>
-                <button type="button" onClick={handleOpen}>Sign Up</button>
+                <button className='button' type="button" onClick={handleOpen}>Sign Up</button>
                 <Modal
                     aria-labelledby="transition-modal-title"
                     aria-describedby="transition-modal-description"

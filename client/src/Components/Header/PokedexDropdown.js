@@ -29,9 +29,9 @@ const PokedexDropdown = () => {
 
   return (
     <div>
-      <Button style={{backgroundColor: 'white'}}aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+      <button className='button' aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
         User Pokedexes
-      </Button>
+      </button>
       <Menu
         id="simple-menu"
         anchorEl={anchorEl}

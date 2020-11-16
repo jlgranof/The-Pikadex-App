@@ -63,7 +63,7 @@ const CreateNewPokedex = (props) => {
     return (
         <div>
             <div>
-                <button type="button" onClick={handleOpen}>Create New Pokedex</button>
+                <button className='newpokemonbutton' type="button" onClick={handleOpen}>Create New Pokedex</button>
                 <Modal
                     aria-labelledby="transition-modal-title"
                     aria-describedby="transition-modal-description"

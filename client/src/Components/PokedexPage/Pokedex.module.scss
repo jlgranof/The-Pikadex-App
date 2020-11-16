@@ -1,6 +1,7 @@
  table {
-    box-shadow: 0 5px 10px 5px grey;
-    border-radius: 6px;
+    box-shadow: 0 10px 10px 10px #bfbfbf;
+    border-radius: 10px;
+    border: 1px solid black;
     margin: auto;
     margin-top: 30px;
   }
@@ -12,4 +13,9 @@
 
   th {
       padding: 10px;
+  }
+
+
+  .header {
+    margin-left: 900px;
   }

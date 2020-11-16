@@ -7,13 +7,17 @@ import { NavLink } from 'react-router-dom';
 const useStyles = makeStyles({
     root: {
       width: 250,
-      margin: 10,
-      border: '1px solid grey',
-      boxShadow: '5px 10px black',
+      margin: 15,
+      border: '1px solid black',
+      boxShadow: '0 10px 10px 10px #bfbfbf',
+      borderRadius: '10%'
     },
     media: {
       height: 250
     },
+    info: {
+      textAlign: 'center'
+    }
   });
 
 
@@ -30,8 +34,10 @@ const useStyles = makeStyles({
                       image={props.pokemon.official_artwork}
                   />
               </NavLink>
-                <Typography variant="h6">{props.pokemon.id}</Typography>
-                <Typography variant="h4">{props.pokemon.name}</Typography>
+                <div className={classes.info}>
+                  <Typography variant="h6">{props.pokemon.id}</Typography>
+                  <Typography variant="h4">{props.pokemon.name}</Typography>
+                </div>
             </CardActionArea>
         </Card>
     )

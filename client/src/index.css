@@ -5,7 +5,18 @@
   position: absolute;
   z-index: -2;
 } */
+  .pokemongrid {
+    margin-top: 30px;
+  }
 
+  .newpokemonbutton {
+    margin-left: 918px;
+    margin-top: 30px;
+    height: 50px;
+    background-color: black;
+    color: white;
+    border-radius: 25%;
+  }
 
   .all-pokedexes {
     display: flex;
@@ -20,16 +31,32 @@
     width: 200px;
   }
 
+  .right-side {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+  }
 
+  .left-header {
+    margin: auto;
+  }
 
   .header {
     display: flex;
     flex-direction: row;
   }
 
-  .logo {
-    margin: auto;
+  .button {
+    border-radius: 10%;
+    height: 40px;
+    width: 80px;
   }
+
+  .header button {
+    margin-right: 30px;
+    border-radius: 10%;
+  }
+
 
 
   .stat-bar {
@@ -115,8 +142,8 @@
     width: 450px;
     border: 1px solid black;
     margin: 100px;
-    border-radius: 6px;
-    box-shadow: 5px 10px grey;
+    border-radius: 10%;
+    box-shadow: 0 10px 10px 10px #bfbfbf;
   }
 
   .pokedex-color {
