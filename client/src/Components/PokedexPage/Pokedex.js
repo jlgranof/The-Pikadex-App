@@ -1,25 +1,36 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, { useState, useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import PokedexDisplay from './PokedexDisplay'
 import styles from './Pokedex.module.scss'
+import { fetchAllPokedex } from '../../Redux/Actions/pokedex'
 
-const Pokedex = () => {
+const Pokedex = (props) => {
     const allPokedexes = useSelector(state => state.pokedexSlice.allPokedex)
     const { id } = useParams()
+    // const dispatch = useDispatch()
+    const [pokemons, setPokemons] = useState({})
+    const [pokedex, setPokedex] = useState({})
 
-    if (!allPokedexes) {
-        return <h1>Loading</h1>
-    }
-    let pokedex = allPokedexes[id - 1]
-    let pokemons = pokedex.pokemon
-    const pokedexComponents = pokemons.map((pokemon) => <PokedexDisplay key={pokemon.id} pokemon={pokemon}/>)
+
+    useEffect(() => {
+        const getPokedex = async () => {
+            if (allPokedexes) {
+                setPokedex(allPokedexes[id - 1])
+                setPokemons(allPokedexes[id-1].pokemon)
+            }
+        }
+        getPokedex()
+    })
+
+    // let pokedex = allPokedexes[id - 1] ? allPokedexes[id - 1] : null
+    // let pokemons = pokedex.pokemon
 
 
     return (
         <div>
-            <h1 className={styles.header}>{pokedex.name} Pokedex</h1>
-            <h2 className={styles.header}>Pokemon {pokedex.game.name}</h2>
+            <h1 className={styles.header}>{pokedex ? pokedex.name : null} Pokedex</h1>
+            <h2 className={styles.header}>Pokemon {pokedex.game ? pokedex.game.name : null}</h2>
             <table>
                 <tr>
                     <th>Level</th>
@@ -31,7 +42,7 @@ const Pokedex = () => {
                     <th>Sp Defense</th>
                     <th>Speed</th>
                 </tr>
-                {pokedexComponents}
+                {pokedex.pokemon ? pokedex.pokemon.map((pokemon) => <PokedexDisplay key={pokemon.id} pokemon={pokemon}/>) : null}
             </table>
         </div>
     )

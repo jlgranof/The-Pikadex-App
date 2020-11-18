@@ -22,10 +22,11 @@ const useStyles = makeStyles({
         paddingTop: 25,
         display: 'block',
         margin: 'auto',
-        height: 750,
+        height: 800,
         border: '1px solid black',
         boxShadow: '0 10px 10px 10px #bfbfbf',
-        borderRadius: '10%'
+        borderRadius: '10%',
+        marginBottom: 50
     }
 })
 

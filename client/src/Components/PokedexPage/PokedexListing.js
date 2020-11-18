@@ -7,7 +7,7 @@ const PokedexListing = (props) => {
     if (!props.pokedex.pokemon) {
         return (
             <div className={styles.listing}>
-                <NavLink to={`/pokedex/${props.pokedex.id}`} className={styles.link}>
+                <NavLink to={`/pokedex/${props.pokedex.id}`} className={styles.link} pokedex={props.pokedex}>
                     {props.pokedex.name} - 0 Pokemon!
                 </NavLink>
             </div>
@@ -16,7 +16,7 @@ const PokedexListing = (props) => {
     else {
         return (
             <div className={styles.listing}>
-                <NavLink to={`/pokedex/${props.pokedex.id}`} className={styles.link}>
+                <NavLink to={`/pokedex/${props.pokedex.id}`} className={styles.link} pokedex={props.pokedex}>
                     {props.pokedex.name} - {props.pokedex.pokemon.length} Pokemon!
                 </NavLink>
             </div>
