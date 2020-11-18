@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import PokedexDisplay from './PokedexDisplay'
 import styles from './Pokedex.module.scss'
-import { fetchAllPokedex } from '../../Redux/Actions/pokedex'
 
 const Pokedex = (props) => {
     const allPokedexes = useSelector(state => state.pokedexSlice.allPokedex)
     const { id } = useParams()
-    // const dispatch = useDispatch()
-    const [pokemons, setPokemons] = useState({})
     const [pokedex, setPokedex] = useState({})
 
 
@@ -17,14 +14,11 @@ const Pokedex = (props) => {
         const getPokedex = async () => {
             if (allPokedexes) {
                 setPokedex(allPokedexes[id - 1])
-                setPokemons(allPokedexes[id-1].pokemon)
             }
         }
         getPokedex()
     })
 
-    // let pokedex = allPokedexes[id - 1] ? allPokedexes[id - 1] : null
-    // let pokemons = pokedex.pokemon
 
 
     return (

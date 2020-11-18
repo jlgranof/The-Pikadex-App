@@ -1,5 +1,5 @@
 // react imports
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
 // redux imports
@@ -11,27 +11,34 @@ import AddPokemon from './AddPokemon'
 
 // styles imports
 import styles from './UserPokedex.module.scss'
+import PokedexDisplay from '../PokedexPage/PokedexDisplay'
 
 const UserPokedex = () => {
     const allPokedexes = useSelector(state => state.pokedexSlice.allPokedex)
     const { id } = useParams()
+    const [pokedex, setPokedex] = useState({})
 
-    if (!allPokedexes) {
-        return <h1>Loading...</h1>
-    }
+    useEffect(() => {
+        const getPokedex = async () => {
+            if (allPokedexes) {
+                setPokedex(allPokedexes[id - 1])
+            }
+        }
+        getPokedex()
+    })
 
 
-    let pokedex = allPokedexes[id - 1]
-    let pokemons = pokedex.pokemon
-    const pokedexComponents = pokemons.map((pokemon) => <UserPokedexDisplay key={pokemon.id} pokemon={pokemon}/>)
+    // let pokedex = allPokedexes[id - 1]
+    // let pokemons = pokedex.pokemon
+    // const pokedexComponents = pokemons.map((pokemon) => <UserPokedexDisplay key={pokemon.id} pokemon={pokemon}/>)
 
 
 
     return (
         <div>
             <div className={styles.pleasework}>
-                <h1>{pokedex.name} Pokedex</h1>
-                <h2>Pokemon {pokedex.game.name}</h2>
+                <h1>{pokedex ? pokedex.name : null} Pokedex</h1>
+                <h2>Pokemon {pokedex.game ? pokedex.game.name :  null}</h2>
                 <AddPokemon />
             </div>
             <table>
@@ -46,7 +53,7 @@ const UserPokedex = () => {
                     <th>Speed</th>
                     <th></th>
                 </tr>
-                {pokedexComponents}
+                {pokedex.pokemon ? pokedex.pokemon.map((pokemon) => <PokedexDisplay key={pokemon.id} pokemon={pokemon} />) : null}
             </table>
         </div>
     )
