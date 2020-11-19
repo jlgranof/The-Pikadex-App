@@ -45,8 +45,6 @@ const AddPokemon = (props) => {
     const [special_attack, setSpecialAttack] = useState('')
     const [special_defense, setSpecialDefense] = useState('')
     const [speed, setSpeed] = useState('')
-    const [active_party, setActiveParty] = useState('')
-    const [still_own, setStillOwn] = useState('')
     const { id } = useParams()
 
     const pokemons = useSelector(state => state.pokemonSlice).pokemon
@@ -78,8 +76,6 @@ const AddPokemon = (props) => {
     const updateSpecialAttack = (e) => setSpecialAttack(e.target.value)
     const updateSpecialDefense = (e) => setSpecialDefense(e.target.value)
     const updateSpeed = (e) => setSpeed(e.target.value)
-    const updateActiveParty = (e) => setActiveParty(e.target.value)
-    const updateStillOwn = (e) => setStillOwn(e.target.value)
 
     let pokemonMenu
     if (pokemons) {
@@ -132,10 +128,6 @@ const AddPokemon = (props) => {
                                 <TextField id="standard-basic" label="Special Defense" value={special_defense} onChange={updateSpecialDefense} />
                                 <br></br>
                                 <TextField id="standard-basic" label="Speed" value={speed} onChange={updateSpeed} />
-                                <br></br>
-                                <TextField id="standard-basic" label="Active Party" value={active_party} onChange={updateActiveParty} />
-                                <br></br>
-                                <TextField id="standard-basic" label="Still Own" value={still_own} onChange={updateStillOwn} />
                                 <br></br>
                                 <Button variant="contained" type="submit">Add</Button>
                             </form>

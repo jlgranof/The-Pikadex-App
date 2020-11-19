@@ -60,7 +60,7 @@ export const fetchYellowPokedex = () => {
 
 export const fetchAllPokedex = () => {
     return async dispatch => {
-        const response = await fetch('/api/pokedex')
+        const response = await fetch('/api/pokedex/')
         const data = await response.json()
         dispatch(getAllPokedex(data.pokedex))
         return response

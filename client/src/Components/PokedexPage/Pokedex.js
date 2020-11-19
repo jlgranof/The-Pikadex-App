@@ -11,13 +11,12 @@ const Pokedex = (props) => {
 
 
     useEffect(() => {
-        const getPokedex = async () => {
             if (allPokedexes) {
+                console.log(allPokedexes)
                 setPokedex(allPokedexes[id - 1])
+                console.log('here')
             }
-        }
-        getPokedex()
-    })
+    }, [allPokedexes])
 
 
 

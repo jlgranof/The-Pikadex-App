@@ -11,7 +11,6 @@ import AddPokemon from './AddPokemon'
 
 // styles imports
 import styles from './UserPokedex.module.scss'
-import PokedexDisplay from '../PokedexPage/PokedexDisplay'
 
 const UserPokedex = () => {
     const allPokedexes = useSelector(state => state.pokedexSlice.allPokedex)
@@ -26,13 +25,6 @@ const UserPokedex = () => {
         }
         getPokedex()
     })
-
-
-    // let pokedex = allPokedexes[id - 1]
-    // let pokemons = pokedex.pokemon
-    // const pokedexComponents = pokemons.map((pokemon) => <UserPokedexDisplay key={pokemon.id} pokemon={pokemon}/>)
-
-
 
     return (
         <div>
@@ -53,7 +45,7 @@ const UserPokedex = () => {
                     <th>Speed</th>
                     <th></th>
                 </tr>
-                {pokedex.pokemon ? pokedex.pokemon.map((pokemon) => <PokedexDisplay key={pokemon.id} pokemon={pokemon} />) : null}
+                {pokedex.pokemon ? pokedex.pokemon.map((pokemon) => <UserPokedexDisplay key={pokemon.id} pokemon={pokemon} />) : null}
             </table>
         </div>
     )
