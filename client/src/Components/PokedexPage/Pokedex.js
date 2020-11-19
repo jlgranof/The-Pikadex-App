@@ -14,7 +14,6 @@ const Pokedex = (props) => {
             if (allPokedexes) {
                 console.log(allPokedexes)
                 setPokedex(allPokedexes[id - 1])
-                console.log('here')
             }
     }, [allPokedexes])
 

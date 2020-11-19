@@ -18,13 +18,10 @@ const UserPokedex = () => {
     const [pokedex, setPokedex] = useState({})
 
     useEffect(() => {
-        const getPokedex = async () => {
             if (allPokedexes) {
                 setPokedex(allPokedexes[id - 1])
             }
-        }
-        getPokedex()
-    })
+    }, [allPokedexes])
 
     return (
         <div>
