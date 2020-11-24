@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { fetchUserPokedex, updatePokemon } from '../../Redux/Actions/userPokedex'
 import { fetchAllPokedex, fetchBluePokedex, fetchRedPokedex, fetchYellowPokedex } from '../../Redux/Actions/pokedex'
 
